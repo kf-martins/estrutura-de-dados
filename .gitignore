@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 # vscode
 .vscode/
-=======
-<<<<<<< HEAD
+
 # Prerequisites
 *.d
 
@@ -58,7 +56,3 @@ dkms.conf
 
 # debug information files
 *.dwo
-
-# vscode
-.vscode
->>>>>>> 11172f8 (fix: vscode files gitignore)
