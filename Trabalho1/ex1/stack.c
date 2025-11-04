@@ -8,6 +8,14 @@ void criarPilhas(DuasPilhas* p) {
     p->exp = 0;
 }
 
+void destruirPilha1(DuasPilhas *p) {
+    p->topo1 = -1;
+}
+
+void destruirPilha2(DuasPilhas *p) {
+    p->topo2 = TAM_ARRAY;
+}
+
 void destruirPilhas(DuasPilhas* p) {
     p->topo1 = -1;
     p->topo2 = TAM_ARRAY;
@@ -30,7 +38,7 @@ bool garantirEspaco(DuasPilhas* p) {
     p->capacidade = nova;
     p->exp++;
 
-    // printf("capacidade estendida para %d (expansoes=%d)\n", p->capacidade, p->exp); //debug
+    printf("capacidade estendida para %d (expansoes=%d)\n", p->capacidade, p->exp);
     return true;
 }
 
@@ -91,3 +99,24 @@ int tamanho2(DuasPilhas* p) {
     return TAM_ARRAY - p->topo2;
 }
 
+void printPilha1(DuasPilhas* p) {
+	printf("Pilha1 (tam=%d): ", tamanho1(p));
+	for (int i = 0; i <= p->topo1; i++) {
+		printf("%d ", p->itens[i]);
+	}
+	printf("\n");
+}
+
+void printPilha2(DuasPilhas* p) {
+	printf("Pilha2 (tam=%d): ", tamanho2(p));
+	for (int i = TAM_ARRAY-1; i > p->topo2-1; i--) {
+		printf("%d ", p->itens[i]);
+	}
+	printf("\n");
+}
+
+void printDuasPilhas(DuasPilhas* p) {
+	printf("capacidade=%d, expansoes=%d | p1=%d, p2=%d\n", p->capacidade, p->exp, tamanho1(p), tamanho2(p));
+	printPilha1(p);
+	printPilha2(p);
+}
