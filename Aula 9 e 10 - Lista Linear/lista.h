@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-#define MAX_LISTA 100000
+#define MAX_LISTA 100001
 #define true 0
 #define  false 1
 #define error -1
@@ -53,7 +53,6 @@ int push(Lista* l, int pos, ElementType e) {
 }
 
 int buscaBinaria(Lista* l, ElementType e) {
-    if(l->nrmoElem = MAX_LISTA) return false;
     int m, low = 0, high = l->nrmoElem-1;
     
     if(l->reg[low] == e) 
@@ -62,7 +61,7 @@ int buscaBinaria(Lista* l, ElementType e) {
         return high;
 
     while (low <= high) {
-        m = low + (int) low/2;
+        m = (low + high)/2;
         
         if(l->reg[m] == e)
             return m;
